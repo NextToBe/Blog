@@ -14,8 +14,8 @@
 
 再继续深入一点：可能会涉及到HTTP的幂等性(idempotent)，但也可能仅限于：
 
-*  HTTP GET方法用于获取资源，不应有副作用，所以是幂等的。比如：GET http://www.bank.com/account/123456，不会改变资源的状态，不论调用一次还是N次都没有副作用。请注意，这里强调的是一次和N次具有相同的副作用，而不是每次GET的结果相同。GET http://www.news.com/latest-news这个HTTP请求可能会每次得到不同的结果，但它本身并没有产生任何副作用，因而是满足幂等性的
-*   POST所对应的URI并非创建的资源本身，而是资源的接收者。比如：POST http://www.forum.com/articles的语义是在http://www.forum.com/articles下创建一篇帖子，HTTP响应中应包含帖子的创建状态以及帖子的URI。两次相同的POST请求会在服务器端创建两份资源，它们具有不同的URI；所以，POST方法不具备幂等性。而PUT所对应的URI是要创建或更新的资源本身。比如：PUT http://www.forum/articles/4231的语义是创建或更新ID为4231的帖子。对同一URI进行多次PUT的副作用和一次PUT是相同的；因此，PUT方法具有幂等性。
+*  HTTP GET方法用于获取资源，不应有副作用，所以是幂等的。比如：GET <http://www.bank.com/account/123456>，不会改变资源的状态，不论调用一次还是N次都没有副作用。请注意，这里强调的是一次和N次具有相同的副作用，而不是每次GET的结果相同。GET <http://www.news.com/latest-news> 这个HTTP请求可能会每次得到不同的结果，但它本身并没有产生任何副作用，因而是满足幂等性的
+*   POST所对应的URI并非创建的资源本身，而是资源的接收者。比如：POST <http://www.forum.com/articles> 的语义是在 <http://www.forum.com/articles> 下创建一篇帖子，HTTP响应中应包含帖子的创建状态以及帖子的URI。两次相同的POST请求会在服务器端创建两份资源，它们具有不同的URI；所以，POST方法不具备幂等性。而PUT所对应的URI是要创建或更新的资源本身。比如：PUT <http://www.forum/articles/4231> 的语义是创建或更新ID为4231的帖子。对同一URI进行多次PUT的副作用和一次PUT是相同的；因此，PUT方法具有幂等性。
 
 但是，他们真的是这样吗？在这两天的开发中，测试用例里面，GET请求的body带上请求参数是完全可行的，*因为不管是POST还是GET在底层都是TCP/IP协议，那么他们便都是TCP连接，所以在GET请求的body里加上参数或者在POST请求的的URI里加上请求参数是完全可以的*。**因为HTTP协议并没有规定这些内容，但是各家浏览器和各家的服务器做了一些限制**。如果浏览器拒绝发起带有body的GET请求或者服务器拒绝解析GET请求的body，那么即使理论和技术上这样的方法都可以行得通，那么也是不实际的。
 
