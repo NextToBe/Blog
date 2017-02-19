@@ -114,12 +114,6 @@ ES 依赖垃圾收集机制来释放堆内存，当JVM 的堆内存使用率达�
 
 ####内存使用
 
-As mentioned above, Elasticsearch makes excellent use of any RAM that has not been allocated to JVM heap. Like Kafka, Elasticsearch was designed to rely on the operating system’s file system cache to serve requests quickly and reliably.
-
-A number of variables determine whether or not Elasticsearch successfully reads from the file system cache. If the segment file was recently written to disk by Elasticsearch, it is already in the cache. However, if a node has been shut off and rebooted, the first time a segment is queried, the information will most likely have to be read from disk. This is one reason why it’s important to make sure your cluster remains stable and that nodes do not crash.
-
-Generally, it’s very important to monitor memory usage on your nodes, and give Elasticsearch as much RAM as possible, so it can leverage the speed of the file system cache without running out of space
-
 就像上面所提到的，ES 善于使用那些没有分配给 JVM 堆的内存。和 Kafka 一样，ES 天生就依赖于操作系统的文件系统缓存并因此服务地更加出色。
 
 有那么几个变量能反映出 ES 是否成功地从文件系统缓存中读到了数据。如果 ES刚刚把段文件写入了磁盘，那么这个段就会出现在缓存里面。然而，如果有节点已经被关闭或是重新启动，当一个段首次被查询的时候，系统更有可能从磁盘中加载信息，这就是为什么要保持集群稳定不宕机的一个重要原因。
