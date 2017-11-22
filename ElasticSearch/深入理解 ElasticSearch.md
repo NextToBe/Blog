@@ -1,4 +1,4 @@
-#深入理解 ElasticSearch
+# 深入理解 ElasticSearch
 节选并译自 [How to monitor Elasticsearch performance](https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/)，原作者 Emily Chang
 
 ## 什么是 ElasticSearch ？
