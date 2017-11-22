@@ -1,4 +1,4 @@
-#ES-Hadoop 的使用
+# ES-Hadoop 的使用
 
 一直以来，ElasticSearch 与 Hadoop 的连接都是一个头疼的问题，直到 *ES-Hadoop* 的出现。
 
@@ -25,92 +25,14 @@
         "GlobalEventID": {
           "type": "long"
         },
-        "SQLDate": {
-          "type": "integer"
-        },
-        "MonthYear": {
-          "type": "integer"
-        },
-        "Year": {
-          "type": "integer"
-        },
-        "FractonDate": {
-          "type": "float"
-        },
-        "Actor1Code": {
+        "ActorCode": {
           "type": "keyword"
         },
-        "Actor1Name": {
+        "ActorName": {
           "type": "keyword"
         },
-        "Actor1CountryCode": {
+       "EventCode": {
           "type": "keyword"
-        },
-        "Actor1KnownGroupCode": {
-          "type": "keyword"
-        },
-        "Actor1EthnicCode": {
-          "type": "keyword"
-        },
-        "Actor1Religion1Code": {
-          "type": "keyword"
-        },
-        "Actor1Religion2Code": {
-          "type": "keyword"
-        },
-        "Actor1Type1Code": {
-          "type": "keyword"
-        },
-        "Actor1Type2Code": {
-          "type": "keyword"
-        },
-        "Actor1Type3Code": {
-          "type": "keyword"
-        },
-        "Actor2Code": {
-          "type": "keyword"
-        },
-        "Actor2Name": {
-          "type": "keyword"
-        },
-        "Actor2CountryCode": {
-          "type": "keyword"
-        },
-        "Actor2KnownGroupCode": {
-          "type": "keyword"
-        },
-        "Actor2EthnicCode": {
-          "type": "keyword"
-        },
-        "Actor2Religion1Code": {
-          "type": "keyword"
-        },
-        "Actor2Religion2Code": {
-          "type": "keyword"
-        },
-        "Actor2Type1Code": {
-          "type": "keyword"
-        },
-        "Actor2Type2Code": {
-          "type": "keyword"
-        },
-        "Actor2Type3Code": {
-          "type": "keyword"
-        },
-        "IsRootEvent": {
-          "type": "integer"
-        },
-        "EventCode": {
-          "type": "keyword"
-        },
-        "EventBaseCode": {
-          "type": "keyword"
-        },
-        "EventRootCode": {
-          "type": "keyword"
-        },
-        "QuadClass": {
-          "type": "integer"
         },
         "NumMentions": {
           "type": "integer"
@@ -120,81 +42,6 @@
         },
         "NumArticles": {
           "type": "integer"
-        },
-        "AverageTone": {
-          "type": "double"
-        },
-        "Actor1GeoType": {
-          "type": "integer"
-        },
-        "Actor1GeoFullname": {
-          "type": "keyword"
-        },
-        "Actor1GeoCountryCode": {
-          "type": "keyword"
-        },
-        "Actor1GeoADM1Code": {
-          "type": "keyword"
-        },
-        "Actor1GeoADM2Code": {
-          "type": "keyword"
-        },
-        "Actor1GeoLat": {
-          "type": "float"
-        },
-        "Actor1GeoLang": {
-          "type": "float"
-        },
-        "Actor1GeoFeatureID": {
-          "type": "keyword"
-        },
-        "Actor2GeoType": {
-          "type": "keyword"
-        },
-        "Actor2GeoFullname": {
-          "type": "keyword"
-        },
-        "Actor2GeoCountryCode": {
-          "type": "keyword"
-        },
-        "Actor2GeoADM1Code": {
-          "type": "keyword"
-        },
-        "Actor2GeoADM2Code": {
-          "type": "keyword"
-        },
-        "Actor2GeoLat": {
-          "type": "float"
-        },
-        "Actor2GeoLang": {
-          "type": "float"
-        },
-        "Actor2GeoFeatureID": {
-          "type": "keyword"
-        },
-        "ActionGeoType": {
-          "type": "keyword"
-        },
-        "ActionGeoFullname": {
-          "type": "keyword"
-        },
-        "ActionGeoCountryCode": {
-          "type": "keyword"
-        },
-        "ActionGeoADM1Code": {
-          "type": "keyword"
-        },
-        "ActionGeoADM2Code": {
-          "type": "keyword"
-        },
-        "ActionGeoLat": {
-          "type": "float"
-        },
-        "ActionGeoLang": {
-          "type": "float"
-        },
-        "ActionGeoFeatureID": {
-          "type": "keyword"
         },
         "DateAdded": {
           "type": "date"

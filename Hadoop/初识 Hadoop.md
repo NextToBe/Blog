@@ -1,10 +1,10 @@
 #初识 Hadoop
 Hadoop 是我一直想要学习的技术，恰巧毕设要用到它，也让我打开了前往新世界的大门。
 
-##Hadoop 的核心
+## Hadoop 的核心
  Hadoop的核心就是HDFS和MapReduce，而两者只是理论基础，不是具体可使用的高级应用，Hadoop旗下有很多经典子项目，比如HBase、Hive等，这些都是基于HDFS和MapReduce发展出来的。要想了解Hadoop，就必须知道HDFS和MapReduce是什么。
  
-###HDFS
+### HDFS
 HDFS（Hadoop Distributed File System，Hadoop分布式文件系统），它是一个高度容错性的系统，适合部署在廉价的机器上。HDFS能提供高吞吐量的数据访问，适合那些有着超大数据集（large data set）的应用程序。
 
 HDFS 设计的特点是：
@@ -22,7 +22,7 @@ HDFS 的关键点有：
 * DataNode：分布在廉价的计算机上，用于存储Block块文件
 
 
-###MapReduce
+### MapReduce
 Hadoop MapReduce是一个使用简易的软件框架，基于它写出来的应用程序能够运行在由上千个商用机器组成的大型集群上，并以一种可靠容错的方式并行处理上T级别的数据集。
 
 一个Map/Reduce 作业（job） 通常会把输入的数据集切分为若干独立的数据块，由 map任务（task）以完全并行的方式处理它们。框架会对map的输出先进行排序， 然后把结果输入给reduce任务。通常作业的输入和输出都会被存储在文件系统中。 整个框架负责任务的调度和监控，以及重新执行已经失败的任务。
